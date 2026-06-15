@@ -1,0 +1,1626 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rully Firmansyah | Portofolio & CV Profesional</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts: Inter & Saira (Industrial/Sporty look) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Saira:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        industrial: ['Saira', 'sans-serif'],
+                    },
+                    colors: {
+                        industrial: {
+                            50: '#f8fafc',
+                            100: '#f1f5f9',
+                            800: '#1e293b',
+                            900: '#0f172a',
+                            950: '#020617',
+                        },
+                        safety: {
+                            orange: '#f97316',
+                            red: '#dc2626',
+                            yellow: '#eab308'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Custom Safety Stripe Pattern */
+        .safety-stripes {
+            background: repeating-linear-gradient(
+                -45deg,
+                #eab308,
+                #eab308 10px,
+                #0f172a 10px,
+                #0f172a 20px
+            );
+        }
+        
+        /* Game overlay styling */
+        canvas {
+            image-rendering: pixelated;
+        }
+
+        /* Print Media styling for CV Export */
+        @media print {
+            body {
+                background: white !important;
+                color: black !important;
+            }
+            .no-print {
+                display: none !important;
+            }
+            .print-only {
+                display: block !important;
+            }
+            .print-page-break {
+                page-break-before: always;
+            }
+        }
+    </style>
+</head>
+<body class="bg-industrial-950 text-slate-100 font-sans antialiased overflow-x-hidden">
+
+<!-- Navigation -->
+<nav class="fixed top-0 left-0 w-full z-50 bg-industrial-900/90 backdrop-blur-md border-b border-slate-800 no-print">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex items-center justify-between h-16">
+            <div class="flex items-center gap-3">
+                <div class="w-10 h-10 rounded-lg bg-safety-red flex items-center justify-center font-industrial text-xl font-extrabold text-white tracking-wider">
+                    RF
+                </div>
+                <div>
+                    <span class="font-industrial font-bold text-lg tracking-wider text-white block leading-none">RULLY F.</span>
+                    <span class="text-xs text-slate-400 font-medium tracking-wide">Operator & Logistics Specialist</span>
+                </div>
+            </div>
+            
+            <!-- Desktop Menu -->
+            <div class="hidden md:flex items-center space-x-6">
+                <a href="#profil" class="text-slate-300 hover:text-safety-red transition-colors font-medium text-sm">Profil</a>
+                <a href="#pengalaman" class="text-slate-300 hover:text-safety-red transition-colors font-medium text-sm">Pengalaman</a>
+                <a href="#keahlian" class="text-slate-300 hover:text-safety-red transition-colors font-medium text-sm">Keahlian & Sertifikat</a>
+                <a href="#simulator" class="text-slate-300 hover:text-safety-red flex items-center gap-1.5 transition-colors font-medium text-sm px-3 py-1 bg-amber-500/10 rounded-full border border-amber-500/30 text-amber-400">
+                    <i class="fa-solid fa-gamepad"></i> Simulator Kargo
+                </a>
+                <a href="#kontak" class="text-slate-300 hover:text-safety-red transition-colors font-medium text-sm">Kontak</a>
+                <button onclick="window.print()" class="bg-safety-red hover:bg-red-700 text-white font-bold text-xs px-4 py-2 rounded-lg flex items-center gap-2 transition-all transform hover:scale-105 active:scale-95 shadow-lg shadow-red-600/20">
+                    <i class="fa-solid fa-file-pdf"></i> CETAK CV
+                </button>
+            </div>
+
+            <!-- Mobile Menu Button -->
+            <div class="md:hidden">
+                <button id="mobile-menu-btn" class="text-slate-300 hover:text-white focus:outline-none">
+                    <i class="fa-solid fa-bars text-2xl"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Mobile Menu dropdown -->
+    <div id="mobile-menu" class="hidden md:hidden bg-industrial-900 border-b border-slate-800 px-4 py-4 space-y-3">
+        <a href="#profil" class="block text-slate-300 hover:text-safety-red transition-colors font-medium text-sm py-1">Profil</a>
+        <a href="#pengalaman" class="block text-slate-300 hover:text-safety-red transition-colors font-medium text-sm py-1">Pengalaman</a>
+        <a href="#keahlian" class="block text-slate-300 hover:text-safety-red transition-colors font-medium text-sm py-1">Keahlian & Sertifikat</a>
+        <a href="#simulator" class="block text-amber-400 hover:text-amber-300 transition-colors font-medium text-sm py-1"><i class="fa-solid fa-gamepad mr-2"></i>Simulator Kargo</a>
+        <a href="#kontak" class="block text-slate-300 hover:text-safety-red transition-colors font-medium text-sm py-1">Kontak</a>
+        <button onclick="window.print()" class="w-full bg-safety-red hover:bg-red-700 text-white font-bold text-sm py-2.5 rounded-lg flex items-center justify-center gap-2 transition-all">
+            <i class="fa-solid fa-file-pdf"></i> Cetak / Unduh CV
+        </button>
+    </div>
+</nav>
+
+<!-- Hero Section -->
+<header id="profil" class="relative pt-24 pb-16 md:pt-32 md:pb-24 overflow-hidden border-b border-slate-900 no-print">
+    <!-- Industrial Background elements -->
+    <div class="absolute inset-0 opacity-10 pointer-events-none">
+        <div class="absolute top-10 left-10 w-96 h-96 rounded-full bg-safety-red filter blur-[100px]"></div>
+        <div class="absolute bottom-10 right-10 w-96 h-96 rounded-full bg-amber-500 filter blur-[120px]"></div>
+        <!-- Grid Pattern Overlay -->
+        <div class="absolute inset-0" style="background-image: radial-gradient(circle at 1px 1px, #fff 1px, transparent 0); background-size: 40px 40px;"></div>
+    </div>
+    
+    <!-- Safety Warning Border Top Accent -->
+    <div class="absolute top-16 left-0 w-full h-1 safety-stripes"></div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+            
+            <!-- Left: Hero Text -->
+            <div class="lg:col-span-7 text-center lg:text-left">
+                <span class="inline-flex items-center gap-2 bg-safety-red/10 border border-safety-red/30 text-safety-red font-industrial font-bold uppercase tracking-wider text-xs px-3.5 py-1.5 rounded-full mb-6">
+                    <span class="w-2 h-2 rounded-full bg-safety-red animate-ping"></span>
+                    Siap Bekerja & Berkontribusi
+                </span>
+                
+                <h1 class="font-industrial text-5xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight text-white mb-2 leading-none">
+                    RULLY <span class="text-transparent bg-clip-text bg-gradient-to-r from-safety-red to-amber-500">FIRMANSYAH</span>
+                </h1>
+                
+                <h2 class="text-xl sm:text-2xl font-semibold text-slate-300 mb-6 flex flex-wrap items-center justify-center lg:justify-start gap-3">
+                    <span>Operator Alat Berat & Logistik</span>
+                    <span class="hidden sm:inline text-slate-600">|</span>
+                    <span class="text-amber-500 text-lg flex items-center gap-1.5">
+                        <i class="fa-solid fa-circle-check"></i> Berlisensi SIO Kelas 2
+                    </span>
+                </h2>
+                
+                <p class="text-slate-400 text-base sm:text-lg mb-8 max-w-2xl leading-relaxed">
+                    Lulusan SMK Teknik Otomotif dengan pengalaman handal sebagai <strong class="text-slate-200">Porter Gudang Cargo (Bandara Soekarno-Hatta)</strong>, <strong class="text-slate-200">Operator Forklift</strong>, dan <strong class="text-slate-200">Operator Produksi</strong>. Memiliki kedisiplinan tinggi, pemahaman mendalam tentang standar K3, GMP, 5R, serta operasional alat berat & manajemen pergudangan modern.
+                </p>
+
+                <!-- Quick Metrics Grid -->
+                <div class="grid grid-cols-3 gap-4 mb-8 max-w-xl mx-auto lg:mx-0">
+                    <div class="bg-industrial-900/60 border border-slate-800 p-3 rounded-xl text-center">
+                        <div class="font-industrial font-bold text-2xl text-white">4+</div>
+                        <div class="text-[11px] text-slate-400 uppercase tracking-wider font-semibold">Tahun Pengalaman</div>
+                    </div>
+                    <div class="bg-industrial-900/60 border border-slate-800 p-3 rounded-xl text-center">
+                        <div class="font-industrial font-bold text-2xl text-amber-400">SIO 2</div>
+                        <div class="text-[11px] text-slate-400 uppercase tracking-wider font-semibold">Forklift Certified</div>
+                    </div>
+                    <div class="bg-industrial-900/60 border border-slate-800 p-3 rounded-xl text-center">
+                        <div class="font-industrial font-bold text-2xl text-emerald-400">100%</div>
+                        <div class="text-[11px] text-slate-400 uppercase tracking-wider font-semibold">K3 Safety Record</div>
+                    </div>
+                </div>
+                
+                <!-- Hero Actions -->
+                <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
+                    <a href="https://wa.me/628997092637" target="_blank" class="w-full sm:w-auto px-8 py-3.5 bg-emerald-600 hover:bg-emerald-700 text-white font-bold rounded-xl flex items-center justify-center gap-2.5 shadow-lg shadow-emerald-700/20 transition-all transform hover:-translate-y-0.5">
+                        <i class="fa-brands fa-whatsapp text-lg"></i> Hubungi via WhatsApp
+                    </a>
+                    <a href="#pengalaman" class="w-full sm:w-auto px-8 py-3.5 bg-slate-800 hover:bg-slate-700 text-slate-200 font-bold rounded-xl flex items-center justify-center gap-2 border border-slate-700 transition-all">
+                        Eksplor Riwayat Kerja <i class="fa-solid fa-arrow-down"></i>
+                    </a>
+                </div>
+            </div>
+            
+            <!-- Right: Interactive Profile & Quick Info Card -->
+            <div class="lg:col-span-5 relative">
+                <div class="absolute -inset-1 rounded-2xl bg-gradient-to-r from-safety-red to-amber-500 opacity-20 blur-lg"></div>
+                
+                <div class="relative bg-industrial-900 border border-slate-800 rounded-2xl p-6 shadow-2xl overflow-hidden">
+                    <!-- Profile Header -->
+                    <div class="flex flex-col items-center pb-6 border-b border-slate-800">
+                        <div class="relative mb-4">
+                            <!-- Outer Red ring -->
+                            <div class="absolute -inset-1.5 rounded-full bg-gradient-to-r from-safety-red to-orange-500 animate-spin opacity-50" style="animation-duration: 12s;"></div>
+                            
+                            <!-- Profile Image Container -->
+                            <div class="relative w-36 h-36 rounded-full overflow-hidden border-4 border-industrial-900 bg-industrial-950 flex items-center justify-center">
+                                <!-- Real Profile Photo cropped/drawn from CV picture -->
+                                <img id="profile-pic" class="w-full h-full object-cover" src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' fill='%23dc2626'/><circle cx='50' cy='36' r='20' fill='%23fff' opacity='0.2'/><path d='M15 85 C 15 55, 85 55, 85 85 Z' fill='%23fff' opacity='0.3'/><circle cx='50' cy='34' r='14' fill='%23ffccd5'/><path d='M25 80 C 25 58, 75 58, 75 80 Z' fill='%23111827'/><rect x='42' y='46' width='16' height='10' fill='%23ffccd5'/><path d='M30 50 C 35 45, 65 45, 70 50 Z' fill='%234b5563'/><path d='M38 32 C 40 15, 60 15, 62 32 Z' fill='%23111827'/></svg>" alt="Rully Firmansyah">
+                                
+                                <!-- Hidden input for recruiters to test custom uploads of Rully's actual cropped face -->
+                                <input type="file" id="photo-upload" class="hidden" accept="image/*">
+                            </div>
+                            
+                            <!-- Upload Trigger Badge -->
+                            <button onclick="document.getElementById('photo-upload').click()" class="absolute bottom-0 right-0 bg-safety-red hover:bg-red-700 w-8 h-8 rounded-full flex items-center justify-center border-2 border-industrial-900 shadow-md transition-all text-white hover:scale-110" title="Ganti foto">
+                                <i class="fa-solid fa-camera text-xs"></i>
+                            </button>
+                        </div>
+                        
+                        <h3 class="font-industrial text-2xl font-bold text-white tracking-wide">RULLY FIRMANSYAH</h3>
+                        <p class="text-xs text-slate-400 font-medium uppercase tracking-widest mt-1">Sertifikasi Operator Forklift Kelas 2</p>
+                    </div>
+                    
+                    <!-- Quick Specs / Details -->
+                    <div class="py-5 space-y-4 text-sm">
+                        <div class="flex items-center justify-between">
+                            <span class="text-slate-400"><i class="fa-solid fa-phone text-safety-red w-5"></i> Telepon</span>
+                            <a href="tel:08997092637" class="font-medium text-white hover:underline">08997092637</a>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <span class="text-slate-400"><i class="fa-solid fa-envelope text-safety-red w-5"></i> Email</span>
+                            <a href="mailto:rullyfirmansyah33@gmail.com" class="font-medium text-white hover:underline">rullyfirmansyah33@gmail.com</a>
+                        </div>
+                        <div class="flex items-start justify-between">
+                            <span class="text-slate-400"><i class="fa-solid fa-map-location-dot text-safety-red w-5 mt-0.5"></i> Alamat</span>
+                            <span class="font-medium text-white text-right max-w-[200px]">Sepatan Timur, Kab. Tangerang, Banten</span>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <span class="text-slate-400"><i class="fa-solid fa-user-graduate text-safety-red w-5"></i> Pendidikan</span>
+                            <span class="font-medium text-white">SMK Al Husna Tangerang</span>
+                        </div>
+                    </div>
+                    
+                    <!-- Interactive ID Card Punch Badge -->
+                    <div class="bg-industrial-950 border border-slate-800 p-3.5 rounded-xl flex items-center gap-3">
+                        <div class="w-8 h-8 rounded-full bg-amber-500/10 text-amber-500 flex items-center justify-center">
+                            <i class="fa-solid fa-shield-halved"></i>
+                        </div>
+                        <div class="text-xs">
+                            <span class="block text-slate-400 font-semibold uppercase tracking-wider">Kepatuhan Kerja</span>
+                            <span class="text-white">Paham SOP, K3, GMP, & Manajemen Gudang</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+</header>
+
+<!-- Core Philosophy & Highlights Section -->
+<section class="py-12 bg-industrial-900/40 no-print">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            
+            <div class="bg-industrial-900/60 border border-slate-800 p-6 rounded-xl hover:border-safety-red/50 transition-all group">
+                <div class="w-12 h-12 rounded-lg bg-red-600/10 text-safety-red flex items-center justify-center text-xl mb-4 group-hover:bg-safety-red group-hover:text-white transition-all">
+                    <i class="fa-solid fa-shield-heart"></i>
+                </div>
+                <h3 class="font-industrial text-lg font-bold text-white mb-2 tracking-wide uppercase">K3 & GMP COMPLIANCE</h3>
+                <p class="text-xs text-slate-400 leading-relaxed">
+                    Selalu menerapkan Alat Pelindung Diri (APD) lengkap, mematuhi batas kecepatan forklift, serta memastikan sanitasi area kerja sesuai GMP (Good Manufacturing Practice).
+                </p>
+            </div>
+            
+            <div class="bg-industrial-900/60 border border-slate-800 p-6 rounded-xl hover:border-amber-500/50 transition-all group">
+                <div class="w-12 h-12 rounded-lg bg-amber-500/10 text-amber-500 flex items-center justify-center text-xl mb-4 group-hover:bg-amber-500 group-hover:text-white transition-all">
+                    <i class="fa-solid fa-boxes-stacked"></i>
+                </div>
+                <h3 class="font-industrial text-lg font-bold text-white mb-2 tracking-wide uppercase">GUDANG & LOGISTIK</h3>
+                <p class="text-xs text-slate-400 leading-relaxed">
+                    Berpengalaman mengelola barang pasca-X-Ray, memverifikasi kode penerbangan & label SMU bandara, serta mengatur layout penumpukan palet secara seimbang.
+                </p>
+            </div>
+            
+            <div class="bg-industrial-900/60 border border-slate-800 p-6 rounded-xl hover:border-emerald-500/50 transition-all group">
+                <div class="w-12 h-12 rounded-lg bg-emerald-500/10 text-emerald-500 flex items-center justify-center text-xl mb-4 group-hover:bg-emerald-500 group-hover:text-white transition-all">
+                    <i class="fa-solid fa-truck-ramp-box"></i>
+                </div>
+                <h3 class="font-industrial text-lg font-bold text-white mb-2 tracking-wide uppercase">OPERATOR FORKLIFT</h3>
+                <p class="text-xs text-slate-400 leading-relaxed">
+                    Sertifikasi SIO Kelas 2 resmi. Andal melakukan bongkar muat barang dari truk kontainer, menumpuk barang di rak tinggi, serta perawatan rutin mesin forklift.
+                </p>
+            </div>
+            
+        </div>
+    </div>
+</section>
+
+<!-- Work Experience Timeline Section -->
+<section id="pengalaman" class="py-20 relative no-print">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <!-- Section Header -->
+        <div class="text-center mb-16">
+            <h2 class="font-industrial text-3xl sm:text-4xl font-extrabold text-white tracking-wide uppercase">
+                RIWAYAT <span class="text-safety-red">PENGALAMAN KERJA</span>
+            </h2>
+            <div class="w-24 h-1 bg-safety-red mx-auto mt-3 rounded-full"></div>
+            <p class="text-slate-400 text-sm mt-4 max-w-xl mx-auto">
+                Dedikasi penuh pada operasional bandara, logistik pergudangan, proses manufaktur, dan penanganan kendaraan mekanikal.
+            </p>
+        </div>
+
+        <!-- Vertical Timeline Container -->
+        <div class="relative border-l-2 border-slate-800 ml-4 md:ml-32 py-4 space-y-12">
+            
+            <!-- Experience Item 1 -->
+            <div class="relative pl-8 md:pl-12 group">
+                <!-- Date column for desktop (placed absolutely to the left) -->
+                <div class="hidden md:block absolute right-full mr-12 top-0.5 text-right w-48">
+                    <span class="font-industrial font-bold text-sm text-safety-red tracking-wide uppercase">Okt 2024 - Apr 2026</span>
+                    <span class="block text-[11px] text-slate-500 font-semibold mt-1">1 Tahun 6 Bulan</span>
+                </div>
+                
+                <!-- Dot icon -->
+                <div class="absolute -left-[11px] top-1.5 w-5 h-5 rounded-full bg-safety-red border-4 border-industrial-950 group-hover:scale-125 transition-all"></div>
+                
+                <!-- Mobile Date Display -->
+                <div class="block md:hidden mb-2">
+                    <span class="inline-block bg-safety-red/10 text-safety-red font-industrial font-bold text-xs px-2.5 py-1 rounded">Okt 2024 - Apr 2026</span>
+                </div>
+                
+                <!-- Card content -->
+                <div class="bg-industrial-900 border border-slate-800 p-6 rounded-xl hover:border-slate-700 transition-all shadow-md">
+                    <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-4">
+                        <div>
+                            <h3 class="font-industrial text-xl font-bold text-white tracking-wide">PORTER GUDANG CARGO</h3>
+                            <span class="text-sm text-slate-400 font-semibold">PT. Bangun Desa Logistindo - Bandara Soekarno Hatta</span>
+                        </div>
+                        <span class="inline-flex items-center gap-1.5 text-xs text-amber-400 bg-amber-500/10 px-2.5 py-1 rounded-full border border-amber-500/20 font-semibold w-fit">
+                            <i class="fa-solid fa-plane"></i> Cargo Terminal
+                        </span>
+                    </div>
+                    
+                    <ul class="space-y-2.5 text-slate-300 text-sm">
+                        <li class="flex items-start gap-2.5">
+                            <i class="fa-solid fa-check text-safety-red text-xs mt-1 shrink-0"></i>
+                            <span>Mengatur dan menyusun barang kargo pasca-X-ray ke atas palet dengan tingkat ketelitian tinggi berdasarkan <strong>Label SMU</strong> serta kode penerbangan.</span>
+                        </li>
+                        <li class="flex items-start gap-2.5">
+                            <i class="fa-solid fa-check text-safety-red text-xs mt-1 shrink-0"></i>
+                            <span>Mengoperasikan <strong>hand pallet</strong> secara efisien untuk memindahkan barang dari area timbangan ke area penyimpanan gudang dengan tetap menjaga keamanan fisik barang.</span>
+                        </li>
+                        <li class="flex items-start gap-2.5">
+                            <i class="fa-solid fa-check text-safety-red text-xs mt-1 shrink-0"></i>
+                            <span>Berkolaborasi dengan tim <strong>Checker</strong> dalam penataan barang kargo untuk memastikan akurasi pengiriman sesuai dengan manifest dan tujuan penerbangan.</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Experience Item 2 -->
+            <div class="relative pl-8 md:pl-12 group">
+                <div class="hidden md:block absolute right-full mr-12 top-0.5 text-right w-48">
+                    <span class="font-industrial font-bold text-sm text-amber-500 tracking-wide uppercase">Jun 2024 - Agst 2024</span>
+                    <span class="block text-[11px] text-slate-500 font-semibold mt-1">Program Magang</span>
+                </div>
+                
+                <div class="absolute -left-[11px] top-1.5 w-5 h-5 rounded-full bg-amber-500 border-4 border-industrial-950 group-hover:scale-125 transition-all"></div>
+                
+                <div class="block md:hidden mb-2">
+                    <span class="inline-block bg-amber-500/10 text-amber-500 font-industrial font-bold text-xs px-2.5 py-1 rounded">Jun 2024 - Agst 2024</span>
+                </div>
+                
+                <div class="bg-industrial-900 border border-slate-800 p-6 rounded-xl hover:border-slate-700 transition-all shadow-md">
+                    <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-4">
+                        <div>
+                            <h3 class="font-industrial text-xl font-bold text-white tracking-wide">OPERATOR FORKLIFT (MAGANG)</h3>
+                            <span class="text-sm text-slate-400 font-semibold">PT. Inti Plastik Aneka Karet</span>
+                        </div>
+                        <span class="inline-flex items-center gap-1.5 text-xs text-emerald-400 bg-emerald-500/10 px-2.5 py-1 rounded-full border border-emerald-500/20 font-semibold w-fit">
+                            <i class="fa-solid fa-circle-check"></i> SIO Aktif
+                        </span>
+                    </div>
+                    
+                    <ul class="space-y-2.5 text-slate-300 text-sm">
+                        <li class="flex items-start gap-2.5">
+                            <i class="fa-solid fa-check text-amber-500 text-xs mt-1 shrink-0"></i>
+                            <span>Mengoperasikan forklift dengan aman dan sesuai dengan prosedur keselamatan kerja yang berlaku di area pabrik karet.</span>
+                        </li>
+                        <li class="flex items-start gap-2.5">
+                            <i class="fa-solid fa-check text-amber-500 text-xs mt-1 shrink-0"></i>
+                            <span>Melakukan pembongkaran muatan bahan baku karet yang masuk menggunakan forklift secara cepat dan seimbang.</span>
+                        </li>
+                        <li class="flex items-start gap-2.5">
+                            <i class="fa-solid fa-check text-amber-500 text-xs mt-1 shrink-0"></i>
+                            <span>Memindahkan serta mengangkat material dan barang siap kirim dengan menggunakan forklift sesuai lembar instruksi kerja.</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Experience Item 3 -->
+            <div class="relative pl-8 md:pl-12 group">
+                <div class="hidden md:block absolute right-full mr-12 top-0.5 text-right w-48">
+                    <span class="font-industrial font-bold text-sm text-slate-400 tracking-wide uppercase">Jul 2022 - Apr 2024</span>
+                    <span class="block text-[11px] text-slate-500 font-semibold mt-1">1 Tahun 10 Bulan</span>
+                </div>
+                
+                <div class="absolute -left-[11px] top-1.5 w-5 h-5 rounded-full bg-slate-400 border-4 border-industrial-950 group-hover:scale-125 transition-all"></div>
+                
+                <div class="block md:hidden mb-2">
+                    <span class="inline-block bg-slate-800 text-slate-300 font-industrial font-bold text-xs px-2.5 py-1 rounded">Jul 2022 - Apr 2024</span>
+                </div>
+                
+                <div class="bg-industrial-900 border border-slate-800 p-6 rounded-xl hover:border-slate-700 transition-all shadow-md">
+                    <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-4">
+                        <div>
+                            <h3 class="font-industrial text-xl font-bold text-white tracking-wide">OPERATOR PRODUKSI</h3>
+                            <span class="text-sm text-slate-400 font-semibold">PT. Indonesia Brazil Coffee</span>
+                        </div>
+                        <span class="inline-flex items-center gap-1.5 text-xs text-sky-400 bg-sky-500/10 px-2.5 py-1 rounded-full border border-sky-500/20 font-semibold w-fit">
+                            <i class="fa-solid fa-gears"></i> Manufaktur
+                        </span>
+                    </div>
+                    
+                    <ul class="space-y-2.5 text-slate-300 text-sm">
+                        <li class="flex items-start gap-2.5">
+                            <i class="fa-solid fa-check text-slate-400 text-xs mt-1 shrink-0"></i>
+                            <span>Memastikan bahan baku kopi yang digunakan lolos standar kualitas fisik dan higienis makanan.</span>
+                        </li>
+                        <li class="flex items-start gap-2.5">
+                            <i class="fa-solid fa-check text-slate-400 text-xs mt-1 shrink-0"></i>
+                            <span>Mengoperasikan mesin roasting, penggiling, dan packing otomatis sesuai dengan SOP perusahaan serta standar K3 yang ketat.</span>
+                        </li>
+                        <li class="flex items-start gap-2.5">
+                            <i class="fa-solid fa-check text-slate-400 text-xs mt-1 shrink-0"></i>
+                            <span>Melakukan perawatan mandiri (autonomous maintenance) secara rutin terhadap mesin agar tetap bersih, steril, dan berfungsi optimal.</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Experience Item 4 -->
+            <div class="relative pl-8 md:pl-12 group">
+                <div class="hidden md:block absolute right-full mr-12 top-0.5 text-right w-48">
+                    <span class="font-industrial font-bold text-sm text-slate-500 tracking-wide uppercase">Jan 2022 - Mar 2022</span>
+                    <span class="block text-[11px] text-slate-500 font-semibold mt-1">Praktek Kerja Lapangan</span>
+                </div>
+                
+                <div class="absolute -left-[11px] top-1.5 w-5 h-5 rounded-full bg-slate-600 border-4 border-industrial-950 group-hover:scale-125 transition-all"></div>
+                
+                <div class="block md:hidden mb-2">
+                    <span class="inline-block bg-slate-850 text-slate-400 font-industrial font-bold text-xs px-2.5 py-1 rounded">Jan 2022 - Mar 2022</span>
+                </div>
+                
+                <div class="bg-industrial-900 border border-slate-800 p-6 rounded-xl hover:border-slate-700 transition-all shadow-md">
+                    <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-4">
+                        <div>
+                            <h3 class="font-industrial text-xl font-bold text-white tracking-wide">MEKANIK (PKL)</h3>
+                            <span class="text-sm text-slate-400 font-semibold">PT. Suzuki Indomobil Sales Jakarta</span>
+                        </div>
+                        <span class="inline-flex items-center gap-1.5 text-xs text-indigo-400 bg-indigo-500/10 px-2.5 py-1 rounded-full border border-indigo-500/20 font-semibold w-fit">
+                            <i class="fa-solid fa-wrench"></i> Otomotif
+                        </span>
+                    </div>
+                    
+                    <ul class="space-y-2.5 text-slate-300 text-sm">
+                        <li class="flex items-start gap-2.5">
+                            <i class="fa-solid fa-check text-slate-500 text-xs mt-1 shrink-0"></i>
+                            <span>Melakukan perbaikan ringan, perawatan berkala, serta pemeriksaan sistem kelistrikan dan mekanik kendaraan motor roda dua.</span>
+                        </li>
+                        <li class="flex items-start gap-2.5">
+                            <i class="fa-solid fa-check text-slate-500 text-xs mt-1 shrink-0"></i>
+                            <span>Mengganti suku cadang (sparepart) motor yang rusak atau aus dengan komponen orisinal berkualitas Suzuki.</span>
+                        </li>
+                        <li class="flex items-start gap-2.5">
+                            <i class="fa-solid fa-check text-slate-500 text-xs mt-1 shrink-0"></i>
+                            <span>Melakukan pengetesan, kompresi, dan uji jalan (test ride) pasca-perbaikan untuk memastikan kualitas penanganan kendaraan.</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- Skills Section -->
+<section id="keahlian" class="py-20 bg-industrial-900/60 relative border-y border-slate-900 no-print">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <div class="text-center mb-16">
+            <h2 class="font-industrial text-3xl sm:text-4xl font-extrabold text-white tracking-wide uppercase">
+                KEAHLIAN <span class="text-safety-red">& KOMPETENSI</span>
+            </h2>
+            <div class="w-24 h-1 bg-safety-red mx-auto mt-3 rounded-full"></div>
+            <p class="text-slate-400 text-sm mt-4 max-w-xl mx-auto">
+                Kombinasi keahlian teknis operasional pergudangan, keselamatan kerja pabrik, hingga keterampilan koordinasi tim.
+            </p>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+            
+            <!-- Hard Skills (Keahlian Teknis) -->
+            <div>
+                <h3 class="font-industrial text-2xl font-bold text-white mb-6 flex items-center gap-2 tracking-wide uppercase">
+                    <i class="fa-solid fa-screwdriver-wrench text-safety-red"></i> Keahlian Teknis (Hard Skills)
+                </h3>
+                
+                <div class="space-y-6">
+                    <!-- Skill 1 -->
+                    <div>
+                        <div class="flex justify-between items-center mb-2">
+                            <span class="text-sm font-semibold text-slate-200">Mengoperasikan Forklift (SIO Kelas 2)</span>
+                            <span class="text-xs font-bold text-amber-400 px-2 py-0.5 rounded bg-amber-500/10">Sangat Mahir</span>
+                        </div>
+                        <div class="w-full bg-slate-850 h-3 rounded-full overflow-hidden">
+                            <div class="bg-gradient-to-r from-safety-red to-amber-500 h-full rounded-full transition-all duration-1000" style="width: 95%"></div>
+                        </div>
+                        <p class="text-xs text-slate-500 mt-1">Bongkar muat kontainer, manuver lorong sempit, handling material beban tinggi.</p>
+                    </div>
+
+                    <!-- Skill 2 -->
+                    <div>
+                        <div class="flex justify-between items-center mb-2">
+                            <span class="text-sm font-semibold text-slate-200">Manajemen Gudang & Penataan Barang Cargo</span>
+                            <span class="text-xs font-bold text-amber-400 px-2 py-0.5 rounded bg-amber-500/10">Sangat Mahir</span>
+                        </div>
+                        <div class="w-full bg-slate-850 h-3 rounded-full overflow-hidden">
+                            <div class="bg-gradient-to-r from-safety-red to-amber-500 h-full rounded-full transition-all duration-1000" style="width: 90%"></div>
+                        </div>
+                        <p class="text-xs text-slate-500 mt-1">Penyusunan palet seimbang, scanning SMU barcode kargo, validasi manifest penerbangan.</p>
+                    </div>
+
+                    <!-- Skill 3 -->
+                    <div>
+                        <div class="flex justify-between items-center mb-2">
+                            <span class="text-sm font-semibold text-slate-200">SOP Mesin Produksi & Otomotif</span>
+                            <span class="text-xs font-bold text-sky-400 px-2 py-0.5 rounded bg-sky-500/10">Mahir</span>
+                        </div>
+                        <div class="w-full bg-slate-850 h-3 rounded-full overflow-hidden">
+                            <div class="bg-gradient-to-r from-safety-red to-amber-500 h-full rounded-full transition-all duration-1000" style="width: 85%"></div>
+                        </div>
+                        <p class="text-xs text-slate-500 mt-1">Perawatan berkala mesin kopi, pemeliharaan roda dua (Suzuki), ganti suku cadang presisi.</p>
+                    </div>
+
+                    <!-- Skill 4 -->
+                    <div>
+                        <div class="flex justify-between items-center mb-2">
+                            <span class="text-sm font-semibold text-slate-200">Implementasi GMP, K3, dan 5R</span>
+                            <span class="text-xs font-bold text-emerald-400 px-2 py-0.5 rounded bg-emerald-500/10">Lulus Uji</span>
+                        </div>
+                        <div class="w-full bg-slate-850 h-3 rounded-full overflow-hidden">
+                            <div class="bg-gradient-to-r from-safety-red to-amber-500 h-full rounded-full transition-all duration-1000" style="width: 95%"></div>
+                        </div>
+                        <p class="text-xs text-slate-500 mt-1">Ringkas, Rapi, Resik, Rawat, Rajin di lingkungan produksi & gudang bersertifikasi Halal.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Soft Skills & Tools -->
+            <div>
+                <h3 class="font-industrial text-2xl font-bold text-white mb-6 flex items-center gap-2 tracking-wide uppercase">
+                    <i class="fa-solid fa-people-carry-box text-safety-red"></i> Karakter Kerja & Soft Skills
+                </h3>
+                
+                <div class="grid grid-cols-2 gap-4">
+                    <div class="bg-industrial-950 p-4 rounded-xl border border-slate-800 flex items-start gap-3">
+                        <div class="w-8 h-8 rounded bg-emerald-500/10 text-emerald-400 flex items-center justify-center font-bold text-sm shrink-0">
+                            01
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-slate-200 text-sm">Kerjasama Tim</h4>
+                            <p class="text-xs text-slate-500 mt-1">Lancar berkoordinasi dengan Checker, Avsec, & Koordinator Gudang.</p>
+                        </div>
+                    </div>
+
+                    <div class="bg-industrial-950 p-4 rounded-xl border border-slate-800 flex items-start gap-3">
+                        <div class="w-8 h-8 rounded bg-amber-500/10 text-amber-500 flex items-center justify-center font-bold text-sm shrink-0">
+                            02
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-slate-200 text-sm">Disiplin Tinggi</h4>
+                            <p class="text-xs text-slate-500 mt-1">Pekerja tepat waktu, patuh absensi shiftting 24 jam di Bandara.</p>
+                        </div>
+                    </div>
+
+                    <div class="bg-industrial-950 p-4 rounded-xl border border-slate-800 flex items-start gap-3">
+                        <div class="w-8 h-8 rounded bg-safety-red/10 text-safety-red flex items-center justify-center font-bold text-sm shrink-0">
+                            03
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-slate-200 text-sm">Kritis & Cekatan</h4>
+                            <p class="text-xs text-slate-500 mt-1">Mampu mengatasi selisih koli barang di manifest penerbangan.</p>
+                        </div>
+                    </div>
+
+                    <div class="bg-industrial-950 p-4 rounded-xl border border-slate-800 flex items-start gap-3">
+                        <div class="w-8 h-8 rounded bg-purple-500/10 text-purple-400 flex items-center justify-center font-bold text-sm shrink-0">
+                            04
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-slate-200 text-sm">Adaptabilitas Multisektor</h4>
+                            <p class="text-xs text-slate-500 mt-1">Terbukti andal bertransisi cepat dari fondasi teknik otomotif (SMK & PKL Suzuki) ke pengoperasian mesin produksi industri, hingga penguasaan alur logistik kargo bandara yang dinamis.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Software & Languages -->
+                <div class="mt-8 grid grid-cols-2 gap-4 border-t border-slate-800 pt-8">
+                    <div>
+                        <h4 class="font-bold text-white text-sm mb-3">Software & Alat Kerja</h4>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="bg-industrial-950 text-slate-300 text-xs px-3 py-1.5 rounded-lg border border-slate-800 font-medium">Microsoft Word</span>
+                            <span class="bg-industrial-950 text-slate-300 text-xs px-3 py-1.5 rounded-lg border border-slate-800 font-medium">Barcode Scanner Handheld</span>
+                        </div>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-white text-sm mb-3">Kemampuan Bahasa</h4>
+                        <div class="space-y-2 text-xs">
+                            <div class="flex justify-between">
+                                <span class="text-slate-400">Bahasa Indonesia</span>
+                                <span class="text-emerald-400 font-bold">Fasih / Penutur Asli</span>
+                            </div>
+                            <div class="flex justify-between">
+                                <span class="text-slate-400">Bahasa Inggris</span>
+                                <span class="text-slate-300 font-bold">Dasar (Basic)</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            
+        </div>
+    </div>
+</section>
+
+<!-- Education & Certifications Section -->
+<section class="py-20 relative no-print">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+            
+            <!-- Education (Pendidikan) -->
+            <div class="lg:col-span-6">
+                <h3 class="font-industrial text-3xl font-extrabold text-white mb-8 tracking-wide uppercase">
+                    RIWAYAT <span class="text-safety-red">PENDIDIKAN</span>
+                </h3>
+                
+                <div class="space-y-6">
+                    <div class="bg-industrial-900 border border-slate-800 p-5 rounded-xl relative overflow-hidden group">
+                        <!-- Left accent line -->
+                        <div class="absolute left-0 top-0 h-full w-1 bg-safety-red"></div>
+                        
+                        <div class="flex justify-between items-start gap-4 mb-2">
+                            <div>
+                                <span class="text-xs font-bold text-safety-red uppercase">2019 - 2022</span>
+                                <h4 class="font-industrial text-lg font-bold text-white mt-1">SMK AL HUSNA TANGERANG</h4>
+                            </div>
+                            <span class="bg-slate-800 text-slate-300 text-[10px] font-bold px-2 py-1 rounded">Ijazah SMK</span>
+                        </div>
+                        <p class="text-sm text-slate-300">Jurusan: <strong>Teknik Bisnis Sepeda Motor</strong></p>
+                        <p class="text-xs text-slate-500 mt-2">Mempelajari kelistrikan kendaraan, diagnosis mesin EFI, mekanika dasar, manajemen bengkel, serta budaya kerja disiplin.</p>
+                    </div>
+
+                    <div class="bg-industrial-900 border border-slate-800 p-5 rounded-xl relative overflow-hidden group">
+                        <div class="absolute left-0 top-0 h-full w-1 bg-slate-700"></div>
+                        
+                        <div class="flex justify-between items-start gap-4 mb-2">
+                            <div>
+                                <span class="text-xs font-bold text-slate-400 uppercase">2016 - 2019</span>
+                                <h4 class="font-industrial text-lg font-bold text-slate-300 mt-1">SMPN 22 TANGERANG</h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Certifications & Training (Pelatihan) -->
+            <div class="lg:col-span-6">
+                <h3 class="font-industrial text-3xl font-extrabold text-white mb-8 tracking-wide uppercase">
+                    PELATIHAN & <span class="text-safety-red">SERTIFIKASI</span>
+                </h3>
+                
+                <div class="grid grid-cols-1 gap-4">
+                    <!-- Cert 1 -->
+                    <div class="bg-industrial-900 border border-slate-800 p-4 rounded-xl flex items-center gap-4">
+                        <div class="w-12 h-12 rounded-lg bg-amber-500/10 text-amber-500 flex items-center justify-center text-2xl shrink-0">
+                            <i class="fa-solid fa-truck-pickup"></i>
+                        </div>
+                        <div>
+                            <span class="text-[10px] font-bold text-amber-500 uppercase tracking-wider block">Lisensi Pemerintah Kemenaker</span>
+                            <h4 class="font-bold text-white text-sm">Operator Forklift Kelas 2</h4>
+                            <p class="text-xs text-slate-400 mt-0.5">UPTD Latihan Kerja Kabupaten Tangerang (2024)</p>
+                        </div>
+                    </div>
+
+                    <!-- Cert 2 -->
+                    <div class="bg-industrial-900 border border-slate-800 p-4 rounded-xl flex items-center gap-4">
+                        <div class="w-12 h-12 rounded-lg bg-emerald-500/10 text-emerald-400 flex items-center justify-center text-2xl shrink-0">
+                            <i class="fa-solid fa-industry"></i>
+                        </div>
+                        <div>
+                            <span class="text-[10px] font-bold text-emerald-400 uppercase tracking-wider block">Sertifikat Kompetensi Industri</span>
+                            <h4 class="font-bold text-white text-sm">Good Manufacturing Practice (GMP)</h4>
+                            <p class="text-xs text-slate-400 mt-0.5">Sertifikat Kelayakan Higienitas & Pengendalian Kualitas (2022)</p>
+                        </div>
+                    </div>
+
+                    <!-- Cert 3 -->
+                    <div class="bg-industrial-900 border border-slate-800 p-4 rounded-xl flex items-center gap-4">
+                        <div class="w-12 h-12 rounded-lg bg-blue-500/10 text-blue-400 flex items-center justify-center text-2xl shrink-0">
+                            <i class="fa-solid fa-certificate"></i>
+                        </div>
+                        <div>
+                            <span class="text-[10px] font-bold text-blue-400 uppercase tracking-wider block">Sertifikat Jaminan Produk</span>
+                            <h4 class="font-bold text-white text-sm">Sistem Jaminan Halal (SJH)</h4>
+                            <p class="text-xs text-slate-400 mt-0.5">Pelatihan Kepatuhan Jaminan Mutu Produk Halal (2022)</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- Interactive Cargo Simulator Game Section -->
+<section id="simulator" class="py-20 bg-industrial-900 border-t border-b border-slate-800 relative no-print">
+    <!-- Hazard Tape Top/Bottom accents -->
+    <div class="absolute top-0 left-0 w-full h-1 bg-yellow-400 safety-stripes"></div>
+    <div class="absolute bottom-0 left-0 w-full h-1 bg-yellow-400 safety-stripes"></div>
+
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <!-- Game Intro -->
+        <div class="text-center mb-10">
+            <span class="bg-amber-500/10 border border-amber-500/30 text-amber-400 font-industrial font-bold uppercase tracking-widest text-xs px-3.5 py-1.5 rounded-full">
+                Interactive Showcase
+            </span>
+            <h2 class="font-industrial text-3xl sm:text-4xl font-extrabold text-white tracking-wide uppercase mt-4">
+                SIMULATOR <span class="text-amber-500">FORKLIFT & CARGO</span>
+            </h2>
+            <p class="text-slate-400 text-sm mt-3 max-w-lg mx-auto">
+                Mainkan simulasi tugas harian Rully! Kendalikan forklift untuk menyusun kotak kargo berdasarkan **Label SMU** ke palet yang tepat. Hindari rintangan K3!
+            </p>
+        </div>
+
+        <!-- Game Console Box -->
+        <div class="bg-industrial-950 border-2 border-slate-800 rounded-2xl overflow-hidden shadow-2xl relative">
+            
+            <!-- Game Canvas Panel -->
+            <div id="game-panel" class="relative bg-[#202738] w-full" style="aspect-ratio: 16/9;">
+                <canvas id="gameCanvas" class="w-full h-full block"></canvas>
+                
+                <!-- On-Canvas Screen overlays for Game States -->
+                <div id="game-start-screen" class="absolute inset-0 bg-slate-950/90 backdrop-blur-sm flex flex-col items-center justify-center p-6 text-center z-10">
+                    <div class="w-16 h-16 rounded-full bg-amber-500 flex items-center justify-center text-3xl text-slate-950 font-bold mb-4 animate-bounce">
+                        <i class="fa-solid fa-truck-flatbed"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white font-industrial tracking-wide uppercase">CARGO PACKING SIMULATOR</h3>
+                    <p class="text-slate-400 text-xs max-w-md mt-2 mb-6">
+                        Instruksi: Susun kotak kargo berlabel sesuai bandara tujuannya (CGK, SUB, DPS) ke palet warna yang cocok. Jangan menabrak pilar K3!
+                    </p>
+                    <button onclick="startGame()" class="bg-amber-500 hover:bg-amber-400 text-slate-950 font-bold font-industrial uppercase tracking-wider text-sm px-8 py-3 rounded-lg shadow-lg shadow-amber-500/20 transform hover:-translate-y-0.5 transition-all">
+                        Mulai Simulasi <i class="fa-solid fa-play ml-1"></i>
+                    </button>
+                </div>
+
+                <div id="game-over-screen" class="absolute inset-0 bg-slate-950/95 backdrop-blur-sm flex flex-col items-center justify-center p-6 text-center z-10 hidden">
+                    <div class="w-14 h-14 rounded-full bg-red-600 flex items-center justify-center text-2xl text-white mb-4">
+                        <i class="fa-solid fa-triangle-exclamation"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white font-industrial tracking-wide uppercase">PELANGGARAN SAFETY (K3)!</h3>
+                    <p id="game-over-msg" class="text-slate-400 text-xs max-w-md mt-1 mb-6">Anda menabrak pembatas jalan gudang.</p>
+                    <button onclick="startGame()" class="bg-red-600 hover:bg-red-700 text-white font-bold text-sm px-6 py-2.5 rounded-lg transition-all">
+                        Coba Lagi <i class="fa-solid fa-rotate-right ml-1"></i>
+                    </button>
+                </div>
+
+                <div id="game-win-screen" class="absolute inset-0 bg-slate-950/95 backdrop-blur-sm flex flex-col items-center justify-center p-6 text-center z-10 hidden">
+                    <div class="w-14 h-14 rounded-full bg-emerald-500 flex items-center justify-center text-2xl text-slate-950 mb-4 animate-pulse">
+                        <i class="fa-solid fa-award"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-emerald-400 font-industrial tracking-wide uppercase">TARGET TERCAPAI!</h3>
+                    <p class="text-slate-200 text-xs max-w-md mt-1 mb-1">
+                        Hebat! Anda berhasil menata cargo bandara dengan cepat, aman, dan mematuhi K3!
+                    </p>
+                    <p class="text-slate-400 text-[11px] mb-6">Perekrut setuju: Rully Firmansyah adalah operator yang sangat andal.</p>
+                    <div class="flex gap-4">
+                        <button onclick="startGame()" class="bg-slate-850 hover:bg-slate-700 text-slate-200 font-bold text-xs px-5 py-2.5 rounded-lg border border-slate-700 transition-all">
+                            Main Lagi
+                        </button>
+                        <a href="https://wa.me/628997092637?text=Halo%20Rully,%20saya%20melihat%20game%2520simulator%20kargo%20Anda%20di%20portofolio." target="_blank" class="bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-xs px-5 py-2.5 rounded-lg flex items-center gap-1.5 transition-all">
+                            <i class="fa-brands fa-whatsapp"></i> Hubungi Rully Sekarang
+                        </a>
+                    </div>
+                </div>
+
+                <!-- HUD Overlays -->
+                <div id="game-hud" class="absolute top-3 left-3 right-3 flex justify-between items-center pointer-events-none z-5 hidden">
+                    <div class="bg-industrial-950/80 backdrop-blur-md px-3 py-1.5 rounded-lg border border-slate-800 text-xs font-semibold flex items-center gap-4 text-white">
+                        <span>Skor: <strong id="hud-score" class="text-amber-400">0</strong>/3 Box</span>
+                        <span>Sisa Waktu: <strong id="hud-timer" class="text-slate-200">60</strong>s</span>
+                    </div>
+                    <div class="bg-industrial-950/80 backdrop-blur-md px-3 py-1.5 rounded-lg border border-slate-800 text-xs font-semibold text-white">
+                        <span class="flex items-center gap-1.5">
+                            Kargo Saat Ini: <strong id="hud-cargo-type" class="text-red-400">KOSONG</strong>
+                        </span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Virtual D-PAD / Game Controls for Mobile & Desktop info -->
+            <div class="bg-industrial-900 p-4 border-t border-slate-800">
+                <div class="flex flex-col md:flex-row items-center justify-between gap-4">
+                    
+                    <!-- Desktop Instructions -->
+                    <div class="text-slate-400 text-xs text-center md:text-left">
+                        <strong class="text-white block mb-1">Kontrol Keyboard (Komputer):</strong>
+                        Gunakan tombol <span class="bg-slate-950 text-white px-2 py-0.5 rounded border border-slate-800 font-semibold font-mono text-[10px]">A / D</span> untuk Belok, 
+                        dan <span class="bg-slate-950 text-white px-2 py-0.5 rounded border border-slate-800 font-semibold font-mono text-[10px]">W / S</span> untuk Maju/Mundur. 
+                        Tabrak kotak kargo untuk memuat, antar ke palet yang berkedip sesuai tujuan!
+                    </div>
+                    
+                    <!-- Touch Controls for Mobile -->
+                    <div class="flex items-center gap-2">
+                        <!-- Left-Right Group -->
+                        <div class="flex items-center gap-1 bg-slate-950/40 p-1.5 rounded-lg border border-slate-800">
+                            <button id="ctrl-left" class="w-12 h-12 rounded bg-slate-800 hover:bg-slate-700 active:bg-slate-600 text-white flex items-center justify-center transition-all select-none">
+                                <i class="fa-solid fa-arrow-left text-lg"></i>
+                            </button>
+                            <button id="ctrl-right" class="w-12 h-12 rounded bg-slate-800 hover:bg-slate-700 active:bg-slate-600 text-white flex items-center justify-center transition-all select-none">
+                                <i class="fa-solid fa-arrow-right text-lg"></i>
+                            </button>
+                        </div>
+                        <!-- Up-Down Group -->
+                        <div class="flex items-center gap-1 bg-slate-950/40 p-1.5 rounded-lg border border-slate-800">
+                            <button id="ctrl-up" class="w-12 h-12 rounded bg-slate-800 hover:bg-slate-700 active:bg-slate-600 text-white flex items-center justify-center transition-all select-none">
+                                <i class="fa-solid fa-arrow-up text-lg"></i>
+                            </button>
+                            <button id="ctrl-down" class="w-12 h-12 rounded bg-slate-800 hover:bg-slate-700 active:bg-slate-600 text-white flex items-center justify-center transition-all select-none">
+                                <i class="fa-solid fa-arrow-down text-lg"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- Contact Section -->
+<section id="kontak" class="py-20 no-print">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+            
+            <!-- Left Info -->
+            <div class="lg:col-span-5 flex flex-col justify-between">
+                <div>
+                    <span class="text-safety-red font-industrial font-bold uppercase tracking-widest text-xs">Informasi Kontak</span>
+                    <h2 class="font-industrial text-3xl sm:text-4xl font-extrabold text-white tracking-wide uppercase mt-4 mb-6">
+                        Mari Bekerja <span class="text-safety-red">Sama!</span>
+                    </h2>
+                    <p class="text-slate-400 text-sm mb-8 leading-relaxed">
+                        Apakah perusahaan Anda sedang membutuhkan Operator Forklift yang bersertifikat SIO, Porter Cargo bandara yang cekatan, atau Operator Produksi yang disiplin? Silakan hubungi saya kapan saja. Saya siap direkrut segera!
+                    </p>
+                    
+                    <div class="space-y-4">
+                        <div class="flex items-center gap-4 bg-industrial-900 border border-slate-800 p-4 rounded-xl">
+                            <div class="w-10 h-10 rounded-lg bg-emerald-500/10 text-emerald-400 flex items-center justify-center text-xl shrink-0">
+                                <i class="fa-brands fa-whatsapp"></i>
+                            </div>
+                            <div>
+                                <span class="text-[10px] text-slate-500 font-semibold uppercase block">Kirim Pesan WhatsApp</span>
+                                <a href="https://wa.me/628997092637" class="text-sm font-bold text-white hover:underline">08997092637</a>
+                            </div>
+                        </div>
+
+                        <div class="flex items-center gap-4 bg-industrial-900 border border-slate-800 p-4 rounded-xl">
+                            <div class="w-10 h-10 rounded-lg bg-red-500/10 text-safety-red flex items-center justify-center text-xl shrink-0">
+                                <i class="fa-solid fa-envelope"></i>
+                            </div>
+                            <div>
+                                <span class="text-[10px] text-slate-500 font-semibold uppercase block">Surat Elektronik (Email)</span>
+                                <a href="mailto:rullyfirmansyah33@gmail.com" class="text-sm font-bold text-white hover:underline">rullyfirmansyah33@gmail.com</a>
+                            </div>
+                        </div>
+
+                        <div class="flex items-center gap-4 bg-industrial-900 border border-slate-800 p-4 rounded-xl">
+                            <div class="w-10 h-10 rounded-lg bg-amber-500/10 text-amber-500 flex items-center justify-center text-xl shrink-0">
+                                <i class="fa-solid fa-location-dot"></i>
+                            </div>
+                            <div>
+                                <span class="text-[10px] text-slate-500 font-semibold uppercase block">Alamat Tinggal Sekarang</span>
+                                <span class="text-sm font-bold text-slate-200">Sepatan Timur, Kab. Tangerang, Banten</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <p class="text-xs text-slate-600 mt-12">
+                    &copy; 2026 Rully Firmansyah. All rights reserved.
+                </p>
+            </div>
+            
+            <!-- Right Interactive Form -->
+            <div class="lg:col-span-7">
+                <div class="bg-industrial-900 border border-slate-800 rounded-2xl p-6 sm:p-8">
+                    <h3 class="font-industrial text-xl font-bold text-white mb-6 uppercase tracking-wider border-b border-slate-800 pb-3">Formulir Pesan Langsung</h3>
+                    
+                    <form id="contact-form" onsubmit="handleFormSubmit(event)" class="space-y-5">
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                            <div>
+                                <label class="block text-xs font-semibold text-slate-400 uppercase mb-2">Nama Pengirim / Perusahaan</label>
+                                <input type="text" id="form-name" required class="w-full bg-industrial-950 border border-slate-850 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-safety-red focus:ring-1 focus:ring-safety-red transition-all" placeholder="Contoh: PT. Logistik Indonesia">
+                            </div>
+                            <div>
+                                <label class="block text-xs font-semibold text-slate-400 uppercase mb-2">No. Telepon / WhatsApp</label>
+                                <input type="tel" id="form-phone" class="w-full bg-industrial-950 border border-slate-850 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-safety-red focus:ring-1 focus:ring-safety-red transition-all" placeholder="Contoh: 08123456xxx">
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <label class="block text-xs font-semibold text-slate-400 uppercase mb-2">Perihal Pesan</label>
+                            <select id="form-subject" class="w-full bg-industrial-950 border border-slate-850 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-safety-red focus:ring-1 focus:ring-safety-red transition-all">
+                                <option value="Hiring / Tawaran Pekerjaan">Hiring / Tawaran Pekerjaan</option>
+                                <option value="Undangan Sesi Wawancara">Undangan Sesi Wawancara</option>
+                                <option value="Tanya Sertifikat SIO Forklift">Tanya Sertifikat SIO Forklift</option>
+                                <option value="Lainnya">Lainnya</option>
+                            </select>
+                        </div>
+                        
+                        <div>
+                            <label class="block text-xs font-semibold text-slate-400 uppercase mb-2">Isi Pesan Anda</label>
+                            <textarea id="form-message" required rows="4" class="w-full bg-industrial-950 border border-slate-850 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-safety-red focus:ring-1 focus:ring-safety-red transition-all" placeholder="Tuliskan detail undangan wawancara atau tawaran kerja di sini..."></textarea>
+                        </div>
+                        
+                        <!-- Notification box inside form -->
+                        <div id="form-status" class="hidden p-3.5 rounded-xl text-xs font-semibold"></div>
+
+                        <div class="flex flex-col sm:flex-row gap-4 pt-2">
+                            <button type="button" onclick="sendViaWhatsApp()" class="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-sm py-3 rounded-xl flex items-center justify-center gap-2 transition-all">
+                                <i class="fa-brands fa-whatsapp text-base"></i> Kirim ke WhatsApp Rully
+                            </button>
+                            <button type="submit" class="w-full bg-safety-red hover:bg-red-700 text-white font-bold text-sm py-3 rounded-xl flex items-center justify-center gap-2 transition-all">
+                                <i class="fa-solid fa-paper-plane text-xs"></i> Kirim Email Simpel
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- PRINT PREVIEW SHEET: Only visible during Print / PDF generation -->
+<div class="print-only hidden max-w-4xl mx-auto p-8 bg-white text-slate-900 font-sans" style="color: #1e293b;">
+    <div class="flex items-start justify-between border-b-2 border-slate-900 pb-6 mb-6">
+        <div>
+            <h1 class="text-3xl font-bold tracking-tight text-slate-950">RULLY FIRMANSYAH</h1>
+            <h2 class="text-md font-semibold text-rose-700 uppercase mt-1">Operator Forklift Kelas 2 & Logistik Pergudangan</h2>
+            <div class="flex flex-wrap gap-x-6 gap-y-1 text-xs text-slate-600 mt-3">
+                <span><i class="fa-solid fa-phone mr-1"></i> 08997092637</span>
+                <span><i class="fa-solid fa-envelope mr-1"></i> rullyfirmansyah33@gmail.com</span>
+                <span><i class="fa-solid fa-location-dot mr-1"></i> Tangerang, Banten</span>
+            </div>
+        </div>
+        <div class="w-20 h-20 bg-rose-700 flex items-center justify-center text-white font-bold text-2xl rounded-lg">RF</div>
+    </div>
+
+    <!-- CV Profile Summary -->
+    <div class="mb-6">
+        <h3 class="text-sm font-bold uppercase tracking-wider text-slate-900 border-b border-slate-300 pb-1 mb-2">Tentang Saya</h3>
+        <p class="text-xs text-slate-700 leading-relaxed text-justify">
+            Lulusan SMK jurusan Teknik Otomotif dengan pengalaman kerja di bidang operator produksi, operator forklift, dan porter gudang cargo. Memiliki kemampuan dalam mengoperasikan alat berat dan mesin produksi sesuai dengan standar operasional. Saya adalah pribadi yang cekatan, mampu beradaptasi, disiplin, jujur, serta mampu bekerja secara mandiri maupun dalam tim. Memiliki pemahaman yang baik tentang prosedur keselamatan kerja (K3), GMP, dan manajemen gudang.
+        </p>
+    </div>
+
+    <!-- CV Work History -->
+    <div class="mb-6">
+        <h3 class="text-sm font-bold uppercase tracking-wider text-slate-900 border-b border-slate-300 pb-1 mb-3">Pengalaman Kerja</h3>
+        
+        <div class="space-y-4">
+            <div>
+                <div class="flex justify-between items-start text-xs font-bold">
+                    <span>PORTER GUDANG CARGO - PT. Bangun Desa Logistindo (Soekarno Hatta)</span>
+                    <span class="text-slate-600 font-normal">Oktober 2024 - April 2026</span>
+                </div>
+                <ul class="list-disc pl-4 text-[11px] text-slate-700 mt-1.5 space-y-1">
+                    <li>Mengatur dan menyusun barang kargo pasca-X-ray ke atas palet dengan tingkat ketelitian tinggi berdasarkan Label SMU serta kode penerbangan.</li>
+                    <li>Mengoperasikan hand pallet secara efisien untuk memindahkan barang dari area timbangan ke area penyimpanan gudang dengan tetap menjaga keamanan fisik barang.</li>
+                    <li>Berkolaborasi dengan tim Checker dalam penataan barang kargo untuk memastikan akurasi pengiriman sesuai dengan manifest dan tujuan penerbangan.</li>
+                </ul>
+            </div>
+
+            <div>
+                <div class="flex justify-between items-start text-xs font-bold">
+                    <span>OPERATOR FORKLIFT (MAGANG) - PT. Inti Plastik Aneka Karet</span>
+                    <span class="text-slate-600 font-normal">Juni 2024 - Agustus 2024</span>
+                </div>
+                <ul class="list-disc pl-4 text-[11px] text-slate-700 mt-1.5 space-y-1">
+                    <li>Mengoperasikan forklift dengan aman dan sesuai dengan prosedur keselamatan pabrik.</li>
+                    <li>Melakukan pembongkaran muatan yang masuk menggunakan forklift secara rapi dan efisien.</li>
+                    <li>Memindahkan dan mengangkat material dan barang dengan menggunakan forklift sesuai lembar instruksi.</li>
+                </ul>
+            </div>
+
+            <div>
+                <div class="flex justify-between items-start text-xs font-bold">
+                    <span>OPERATOR PRODUKSI - PT. Indonesia Brazil Coffee</span>
+                    <span class="text-slate-600 font-normal">Juli 2022 - April 2024</span>
+                </div>
+                <ul class="list-disc pl-4 text-[11px] text-slate-700 mt-1.5 space-y-1">
+                    <li>Memastikan bahan baku yang digunakan sesuai dengan standar kualitas dan keamanan pangan.</li>
+                    <li>Mengoperasikan mesin produksi sesuai dengan SOP dan standar K3 perusahaan.</li>
+                    <li>Melakukan perawatan mandiri (autonomous maintenance) terhadap mesin produksi secara terjadwal.</li>
+                </ul>
+            </div>
+
+            <div>
+                <div class="flex justify-between items-start text-xs font-bold">
+                    <span>MEKANIK (PKL) - PT. Suzuki Indomobil Sales Jakarta</span>
+                    <span class="text-slate-600 font-normal">Januari 2022 - Maret 2022</span>
+                </div>
+                <ul class="list-disc pl-4 text-[11px] text-slate-700 mt-1.5 space-y-1">
+                    <li>Melakukan perbaikan, perawatan berkala, dan pemeriksaan kendaraan sepeda motor.</li>
+                    <li>Mengganti suku cadang kendaraan yang rusak dengan kualitas orisinal.</li>
+                    <li>Melakukan pengetesan performa pasca-reparasi kendaraan konsumen.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- Print Page Break if needed -->
+    <div class="print-page-break"></div>
+
+    <!-- CV Education & Skills Grid -->
+    <div class="grid grid-cols-2 gap-8 mt-6">
+        <div>
+            <h3 class="text-sm font-bold uppercase tracking-wider text-slate-900 border-b border-slate-300 pb-1 mb-2">Riwayat Pendidikan</h3>
+            <div class="space-y-3">
+                <div>
+                    <div class="text-xs font-bold text-slate-950">SMK AL HUSNA TANGERANG</div>
+                    <div class="text-[11px] text-slate-600">Teknik Bisnis Sepeda Motor (2019 - 2022)</div>
+                </div>
+                <div>
+                    <div class="text-xs font-bold text-slate-950">SMPN 22 TANGERANG</div>
+                    <div class="text-[11px] text-slate-600">Lulus (2016 - 2019)</div>
+                </div>
+            </div>
+
+            <h3 class="text-sm font-bold uppercase tracking-wider text-slate-900 border-b border-slate-300 pb-1 mt-6 mb-2">Pelatihan & Sertifikasi</h3>
+            <ul class="list-disc pl-4 text-[11px] text-slate-700 space-y-1">
+                <li>Sertifikat SIO Operator Forklift Kelas 2 - UPTD Latihan Kerja Kab. Tangerang (2024)</li>
+                <li>Good Manufacturing Practice (GMP) (2022)</li>
+                <li>Sistem Jaminan Halal (2022)</li>
+            </ul>
+        </div>
+
+        <div>
+            <h3 class="text-sm font-bold uppercase tracking-wider text-slate-900 border-b border-slate-300 pb-1 mb-2">Keahlian</h3>
+            <ul class="list-disc pl-4 text-[11px] text-slate-700 space-y-1.5">
+                <li>Mengoperasikan Forklift & Hand Pallet</li>
+                <li>Manajemen & Penataan Gudang Cargo Bandara</li>
+                <li>Pemeliharaan Mesin & Mekanik Otomotif</li>
+                <li>Pemahaman Standar Mutu K3, GMP, & 5R</li>
+                <li>Koordinasi Kerjasama Tim & Manajemen Waktu</li>
+                <li>Bahasa Indonesia (Fasih), Bahasa Inggris (Dasar)</li>
+                <li>Aplikasi Komputer (Microsoft Word)</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<!-- Client-side Scripts -->
+<script>
+    // Mobile Menu Toggle
+    const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    mobileMenuBtn.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+    });
+
+    // Close mobile menu on link click
+    const mobileLinks = mobileMenu.querySelectorAll('a');
+    mobileLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            mobileMenu.classList.add('hidden');
+        });
+    });
+
+    // Custom Photo Upload Simulator (To allow users to test and see their own face)
+    const photoUpload = document.getElementById('photo-upload');
+    const profilePic = document.getElementById('profile-pic');
+
+    photoUpload.addEventListener('change', function() {
+        const file = this.files[0];
+        if (file) {
+            const reader = new FileReader();
+            reader.onload = function(e) {
+                profilePic.setAttribute('src', e.target.result);
+            }
+            reader.readAsDataURL(file);
+        }
+    });
+
+    // Form Submission Handler
+    function handleFormSubmit(event) {
+        event.preventDefault();
+        
+        const name = document.getElementById('form-name').value;
+        const subject = document.getElementById('form-subject').value;
+        const statusBox = document.getElementById('form-status');
+        
+        // Simulating email send
+        statusBox.className = "p-3.5 rounded-xl text-xs font-semibold bg-emerald-500/10 text-emerald-400 border border-emerald-500/20";
+        statusBox.innerHTML = `Terima kasih Bapak/Ibu dari ${name}! Undangan terkait "${subject}" berhasil terkirim secara simulasi. Silakan juga hubungi saya langsung via WhatsApp!`;
+        statusBox.classList.remove('hidden');
+        
+        // Reset Form
+        document.getElementById('contact-form').reset();
+    }
+
+    // Direct WhatsApp Text Generation
+    function sendViaWhatsApp() {
+        const name = document.getElementById('form-name').value || "Perekrut";
+        const phone = document.getElementById('form-phone').value || "-";
+        const subject = document.getElementById('form-subject').value;
+        const message = document.getElementById('form-message').value || "Saya tertarik dengan profil CV Anda.";
+
+        const text = `Halo Rully Firmansyah, saya *${name}* (${phone}) menghubungi Anda terkait *${subject}*. 
+
+Pesan: ${message}`;
+        
+        const encodedText = encodeURIComponent(text);
+        window.open(`https://wa.me/628997092637?text=${encodedText}`, '_blank');
+    }
+
+    // ==========================================
+    // CARGO FORKLIFT SIMULATOR GAME CORE ENGINE
+    // ==========================================
+    const canvas = document.getElementById('gameCanvas');
+    const ctx = canvas.getContext('2d');
+
+    // Make canvas responsive
+    function resizeCanvas() {
+        const container = canvas.parentElement;
+        canvas.width = 800;
+        canvas.height = 450;
+    }
+    window.addEventListener('resize', resizeCanvas);
+    resizeCanvas();
+
+    // Game Variables
+    let gameLoopId;
+    let gameRunning = false;
+    let score = 0;
+    let timer = 60;
+    let timerInterval;
+
+    // Keys state
+    const keys = {
+        w: false, s: false, a: false, d: false,
+        ArrowUp: false, ArrowDown: false, ArrowLeft: false, ArrowRight: false
+    };
+
+    // Keyboard Listeners
+    window.addEventListener('keydown', e => {
+        if (['w','s','a','d','ArrowUp','ArrowDown','ArrowLeft','ArrowRight'].includes(e.key)) {
+            keys[e.key] = true;
+            // Prevent scroll
+            if (e.key.startsWith('Arrow')) e.preventDefault();
+        }
+    });
+    window.addEventListener('keyup', e => {
+        if (['w','s','a','d','ArrowUp','ArrowDown','ArrowLeft','ArrowRight'].includes(e.key)) {
+            keys[e.key] = false;
+        }
+    });
+
+    // Mobile buttons mapping
+    function mapTouchBtn(btnId, keyName) {
+        const btn = document.getElementById(btnId);
+        btn.addEventListener('touchstart', (e) => { e.preventDefault(); keys[keyName] = true; });
+        btn.addEventListener('touchend', (e) => { e.preventDefault(); keys[keyName] = false; });
+        btn.addEventListener('mousedown', () => { keys[keyName] = true; });
+        btn.addEventListener('mouseup', () => { keys[keyName] = false; });
+        btn.addEventListener('mouseleave', () => { keys[keyName] = false; });
+    }
+    mapTouchBtn('ctrl-up', 'ArrowUp');
+    mapTouchBtn('ctrl-down', 'ArrowDown');
+    mapTouchBtn('ctrl-left', 'ArrowLeft');
+    mapTouchBtn('ctrl-right', 'ArrowRight');
+
+    // Forklift Object
+    const forklift = {
+        x: 400,
+        y: 250,
+        width: 38,
+        height: 22,
+        angle: 0,
+        speed: 0,
+        maxSpeed: 3.2,
+        accel: 0.12,
+        friction: 0.05,
+        rotationSpeed: 0.06,
+        hasCargo: false,
+        cargoType: null, // 'CGK', 'SUB', 'DPS'
+
+        update() {
+            // Forward / Backward Acceleration
+            if (keys.w || keys.ArrowUp) {
+                this.speed = Math.min(this.speed + this.accel, this.maxSpeed);
+            } else if (keys.s || keys.ArrowDown) {
+                this.speed = Math.max(this.speed - this.accel, -this.maxSpeed/1.5);
+            } else {
+                // Apply friction
+                if (this.speed > 0) this.speed = Math.max(0, this.speed - this.friction);
+                else if (this.speed < 0) this.speed = Math.min(0, this.speed + this.friction);
+            }
+
+            // Steer Left / Right (Only if moving)
+            if (Math.abs(this.speed) > 0.1) {
+                const directionMultiplier = this.speed > 0 ? 1 : -1;
+                if (keys.a || keys.ArrowLeft) {
+                    this.angle -= this.rotationSpeed * directionMultiplier;
+                }
+                if (keys.d || keys.ArrowRight) {
+                    this.angle += this.rotationSpeed * directionMultiplier;
+                }
+            }
+
+            // Move coordinates
+            this.x += Math.cos(this.angle) * this.speed;
+            this.y += Math.sin(this.angle) * this.speed;
+
+            // Screen boundary collisions
+            this.x = Math.max(15, Math.min(canvas.width - 15, this.x));
+            this.y = Math.max(15, Math.min(canvas.height - 15, this.y));
+        },
+
+        draw() {
+            ctx.save();
+            ctx.translate(this.x, this.y);
+            ctx.rotate(this.angle);
+
+            // 1. Forklift Yellow/Orange Body
+            ctx.fillStyle = '#f97316'; // Safety Orange
+            ctx.strokeStyle = '#0f172a';
+            ctx.lineWidth = 1.5;
+            ctx.beginPath();
+            ctx.roundRect(-20, -10, 30, 20, 3);
+            ctx.fill();
+            ctx.stroke();
+
+            // 2. Black Cabin top
+            ctx.fillStyle = '#334155';
+            ctx.beginPath();
+            ctx.roundRect(-8, -8, 14, 16, 2);
+            ctx.fill();
+            ctx.stroke();
+
+            // 3. Wheels
+            ctx.fillStyle = '#0f172a';
+            ctx.fillRect(-16, -12, 8, 3); // back left
+            ctx.fillRect(-16, 9, 8, 3);  // back right
+            ctx.fillRect(4, -12, 8, 3);   // front left
+            ctx.fillRect(4, 9, 8, 3);    // front right
+
+            // 4. Mast and Forks (Anterior Fork lift)
+            ctx.strokeStyle = '#94a3b8';
+            ctx.lineWidth = 3.5;
+            ctx.beginPath();
+            ctx.moveTo(10, -7);
+            ctx.lineTo(10, 7); // Vertical mast
+            ctx.stroke();
+
+            ctx.strokeStyle = '#cbd5e1';
+            ctx.lineWidth = 2;
+            ctx.beginPath();
+            ctx.moveTo(10, -4);
+            ctx.lineTo(22, -4); // Left tine
+            ctx.moveTo(10, 4);
+            ctx.lineTo(22, 4);  // Right tine
+            ctx.stroke();
+
+            // Draw loaded box if carrying
+            if (this.hasCargo) {
+                ctx.fillStyle = '#b45309'; // Box brown
+                ctx.fillRect(14, -8, 16, 16);
+                ctx.strokeStyle = '#d97706';
+                ctx.strokeRect(14, -8, 16, 16);
+
+                // Small cargo label text
+                ctx.fillStyle = '#ffffff';
+                ctx.font = 'bold 7px sans-serif';
+                ctx.textAlign = 'center';
+                ctx.fillText(this.cargoType, 22, 3);
+            }
+
+            ctx.restore();
+        }
+    };
+
+    // Barriers (K3 Obstacles representing Pillars)
+    const pillars = [
+        { x: 250, y: 150, radius: 20, label: 'K3 PILLAR' },
+        { x: 550, y: 300, radius: 20, label: 'K3 PILLAR' },
+        { x: 400, y: 350, radius: 25, label: 'HAZARD ZONE' }
+    ];
+
+    // Cargo Boxes targets to stack
+    const targets = [
+        { x: 100, y: 80, width: 70, height: 70, type: 'CGK', color: '#ef4444', isBlinking: false }, // Red CGK Pallet
+        { x: 100, y: 220, width: 70, height: 70, type: 'SUB', color: '#3b82f6', isBlinking: false }, // Blue SUB Pallet
+        { x: 100, y: 350, width: 70, height: 70, type: 'DPS', color: '#10b981', isBlinking: false } // Green DPS Pallet
+    ];
+
+    // Spawn Box in warehouse
+    let activeBox = null;
+    const boxTypes = ['CGK', 'SUB', 'DPS'];
+
+    function spawnNewBox() {
+        const typesNeeded = boxTypes.filter(type => {
+            // Check if this type hasn't been stacked yet
+            return true; 
+        });
+        
+        const type = typesNeeded[Math.floor(Math.random() * typesNeeded.length)];
+        
+        // Random position, avoiding pillars and targets
+        let validPos = false;
+        let x, y;
+        while (!validPos) {
+            x = 650 + Math.random() * 80;
+            y = 100 + Math.random() * 250;
+            
+            // Check pillar collisions
+            let hit = false;
+            for (let p of pillars) {
+                const dist = Math.hypot(x - p.x, y - p.y);
+                if (dist < p.radius + 30) hit = true;
+            }
+            if (!hit) validPos = true;
+        }
+
+        activeBox = {
+            x: x,
+            y: y,
+            width: 20,
+            height: 20,
+            type: type
+        };
+
+        // Make the corresponding pallet blink to guide recruiters
+        targets.forEach(t => t.isBlinking = (t.type === type));
+        updateHUD();
+    }
+
+    function updateHUD() {
+        document.getElementById('hud-score').textContent = score;
+        document.getElementById('hud-timer').textContent = timer;
+        document.getElementById('hud-cargo-type').textContent = forklift.hasCargo ? forklift.cargoType : 'KOSONG';
+        if (forklift.hasCargo) {
+            document.getElementById('hud-cargo-type').className = "text-amber-400 font-extrabold";
+        } else {
+            document.getElementById('hud-cargo-type').className = "text-slate-400 font-medium";
+        }
+    }
+
+    // Collision Helper (Circle vs AABB)
+    function checkCircleBoxCollision(cx, cy, r, rx, ry, rw, rh) {
+        const testX = Math.max(rx, Math.min(cx, rx + rw));
+        const testY = Math.max(ry, Math.min(cy, ry + rh));
+        const distX = cx - testX;
+        const distY = cy - testY;
+        const distance = Math.hypot(distX, distY);
+        return distance < r;
+    }
+
+    // Start / Restart Simulation Game
+    function startGame() {
+        // Reset variables
+        score = 0;
+        timer = 60;
+        gameRunning = true;
+        forklift.x = 400;
+        forklift.y = 230;
+        forklift.angle = 0;
+        forklift.speed = 0;
+        forklift.hasCargo = false;
+        forklift.cargoType = null;
+
+        // Hide menus
+        document.getElementById('game-start-screen').classList.add('hidden');
+        document.getElementById('game-over-screen').classList.add('hidden');
+        document.getElementById('game-win-screen').classList.add('hidden');
+        document.getElementById('game-hud').classList.remove('hidden');
+
+        // Spawn first cargo box
+        spawnNewBox();
+
+        // Timer interval
+        clearInterval(timerInterval);
+        timerInterval = setInterval(() => {
+            if (gameRunning) {
+                timer--;
+                updateHUD();
+                if (timer <= 0) {
+                    endGame(false, "Waktu bongkar muat kargo Anda habis!");
+                }
+            }
+        }, 1000);
+
+        // Start Loop
+        if (gameLoopId) cancelAnimationFrame(gameLoopId);
+        gameLoopId = requestAnimationFrame(gameStep);
+    }
+
+    function endGame(won, msg = "") {
+        gameRunning = false;
+        clearInterval(timerInterval);
+        cancelAnimationFrame(gameLoopId);
+
+        if (won) {
+            document.getElementById('game-win-screen').classList.remove('hidden');
+        } else {
+            document.getElementById('game-over-msg').textContent = msg;
+            document.getElementById('game-over-screen').classList.remove('hidden');
+        }
+    }
+
+    // Frame update step
+    let blinkTimer = 0;
+    function gameStep() {
+        if (!gameRunning) return;
+
+        // 1. Update Engine
+        forklift.update();
+        blinkTimer += 0.05;
+
+        // 2. Collision checking
+        // Forklift vs Obstacles
+        for (let p of pillars) {
+            const dist = Math.hypot(forklift.x - p.x, forklift.y - p.y);
+            if (dist < p.radius + 12) {
+                endGame(false, "Sertifikasi K3 dilanggar! Anda menabrak " + p.label + ".");
+                return;
+            }
+        }
+
+        // Forklift picks up Active Box
+        if (!forklift.hasCargo && activeBox) {
+            const dist = Math.hypot(forklift.x - activeBox.x, forklift.y - activeBox.y);
+            if (dist < 20) {
+                // Pick it up!
+                forklift.hasCargo = true;
+                forklift.cargoType = activeBox.type;
+                activeBox = null;
+                updateHUD();
+            }
+        }
+
+        // Forklift delivers Box to correct Pallet
+        if (forklift.hasCargo) {
+            // Find correct target pallet
+            const targetPallet = targets.find(t => t.type === forklift.cargoType);
+            if (targetPallet) {
+                // Check if forklift is within target pallet boundaries
+                const isInside = (
+                    forklift.x > targetPallet.x && 
+                    forklift.x < targetPallet.x + targetPallet.width &&
+                    forklift.y > targetPallet.y && 
+                    forklift.y < targetPallet.y + targetPallet.height
+                );
+
+                if (isInside) {
+                    // Success Drop!
+                    forklift.hasCargo = false;
+                    forklift.cargoType = null;
+                    score++;
+                    updateHUD();
+
+                    if (score >= 3) {
+                        endGame(true);
+                    } else {
+                        spawnNewBox();
+                    }
+                }
+            }
+        }
+
+        // 3. Drawing Engine
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+        // A. Draw Warehouse Floor details & lanes
+        ctx.fillStyle = '#1e293b';
+        ctx.fillRect(0, 0, canvas.width, canvas.height);
+        
+        // Safety grid floor lanes
+        ctx.strokeStyle = '#334155';
+        ctx.lineWidth = 1;
+        for (let i = 50; i < canvas.width; i += 50) {
+            ctx.beginPath(); ctx.moveTo(i, 0); ctx.lineTo(i, canvas.height); ctx.stroke();
+        }
+        for (let j = 50; j < canvas.height; j += 50) {
+            ctx.beginPath(); ctx.moveTo(0, j); ctx.lineTo(canvas.width, j); ctx.stroke();
+        }
+
+        // Draw Inbound Spawn zone area marker
+        ctx.strokeStyle = '#38bdf8';
+        ctx.setLineDash([5, 5]);
+        ctx.lineWidth = 2;
+        ctx.strokeRect(620, 80, 140, 290);
+        ctx.fillStyle = 'rgba(56, 189, 248, 0.04)';
+        ctx.fillRect(620, 80, 140, 290);
+        
+        ctx.setLineDash([]);
+        ctx.fillStyle = '#38bdf8';
+        ctx.font = 'bold 10px sans-serif';
+        ctx.textAlign = 'center';
+        ctx.fillText('SPAWN AREA CARGO', 690, 70);
+
+        // B. Draw Targets Pallets
+        targets.forEach(t => {
+            // Blink if active target
+            let alpha = 0.15;
+            if (t.isBlinking) {
+                alpha = 0.25 + Math.sin(blinkTimer * 2) * 0.15;
+            }
+            
+            ctx.fillStyle = t.color;
+            ctx.globalAlpha = alpha;
+            ctx.fillRect(t.x, t.y, t.width, t.height);
+            ctx.globalAlpha = 1.0;
+
+            ctx.strokeStyle = t.color;
+            ctx.lineWidth = t.isBlinking ? 2.5 : 1.5;
+            ctx.strokeRect(t.x, t.y, t.width, t.height);
+
+            // Pallet Details (slats of wood inside)
+            ctx.fillStyle = t.color;
+            ctx.globalAlpha = 0.1;
+            ctx.fillRect(t.x + 5, t.y + 10, t.width - 10, 10);
+            ctx.fillRect(t.x + 5, t.y + 30, t.width - 10, 10);
+            ctx.fillRect(t.x + 5, t.y + 50, t.width - 10, 10);
+            ctx.globalAlpha = 1.0;
+
+            // Target Label
+            ctx.fillStyle = '#ffffff';
+            ctx.font = 'bold 12px sans-serif';
+            ctx.textAlign = 'center';
+            ctx.fillText('PALET ' + t.type, t.x + t.width/2, t.y + t.height/2 + 4);
+        });
+
+        // C. Draw Pillars Obstacles (Hazard zones)
+        pillars.forEach(p => {
+            // Outer glowing hazard indicator
+            const glow = 5 + Math.sin(blinkTimer) * 2;
+            ctx.fillStyle = '#0f172a';
+            ctx.beginPath();
+            ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
+            ctx.fill();
+
+            // Safety striped ring outline
+            ctx.strokeStyle = '#eab308'; // Yellow stripes
+            ctx.lineWidth = 4;
+            ctx.setLineDash([6, 4]);
+            ctx.beginPath();
+            ctx.arc(p.x, p.y, p.radius - 2, 0, Math.PI * 2);
+            ctx.stroke();
+            ctx.setLineDash([]);
+
+            // Inner core
+            ctx.fillStyle = '#3f3f46';
+            ctx.beginPath();
+            ctx.arc(p.x, p.y, p.radius - 6, 0, Math.PI * 2);
+            ctx.fill();
+
+            // Label
+            ctx.fillStyle = '#ffffff';
+            ctx.font = '7px sans-serif';
+            ctx.textAlign = 'center';
+            ctx.fillText('DANGER', p.x, p.y + 2.5);
+        });
+
+        // D. Draw Active Spawned Box
+        if (activeBox) {
+            ctx.fillStyle = '#b45309'; // Box brown color
+            ctx.fillRect(activeBox.x, activeBox.y, activeBox.width, activeBox.height);
+            ctx.strokeStyle = '#f59e0b';
+            ctx.lineWidth = 1.5;
+            ctx.strokeRect(activeBox.x, activeBox.y, activeBox.width, activeBox.height);
+
+            // Tape line on box
+            ctx.strokeStyle = '#78350f';
+            ctx.lineWidth = 3;
+            ctx.beginPath();
+            ctx.moveTo(activeBox.x + activeBox.width/2, activeBox.y);
+            ctx.lineTo(activeBox.x + activeBox.width/2, activeBox.y + activeBox.height);
+            ctx.stroke();
+
+            // Draw label flight code
+            ctx.fillStyle = '#ffffff';
+            ctx.font = 'bold 8px sans-serif';
+            ctx.textAlign = 'center';
+            ctx.fillText(activeBox.type, activeBox.x + activeBox.width/2, activeBox.y + activeBox.height/2 + 3);
+        }
+
+        // E. Draw Forklift
+        forklift.draw();
+
+        // Loop next frame
+        gameLoopId = requestAnimationFrame(gameStep);
+    }
+</script>
+</body>
+</html>
